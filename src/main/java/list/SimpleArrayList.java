@@ -130,6 +130,14 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         lastIndex = 0;
     }
 
+    public static <T> SimpleList<T> fromArrayToList(T [] arrays) {
+        SimpleList<T> list = new SimpleArrayList<>();
+        for (T value : arrays) {
+            list.add(value);
+        }
+        return list;
+    }
+
     private void expandValues() {
         values = Arrays.copyOf(values, values.length + INIT_SIZE);
     }
