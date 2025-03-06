@@ -61,4 +61,10 @@ public interface SimpleList<T> {
         }
         return filteredList;
     }
+
+    static <T> void copy(SimpleList<? extends T> source, SimpleList<? super T> destination) {
+        for (int i = 0; i < source.size(); i++) {
+            destination.add(source.get(i));
+        }
+    }
 }
