@@ -140,4 +140,11 @@ public class SimpleArrayList<T> implements SimpleList<T> {
     private void expandValues() {
         values = Arrays.copyOf(values, values.length + INIT_SIZE);
     }
+
+    @Override
+    public String toString() {
+        return "SimpleArrayList{" +
+            "values=" + Arrays.toString(values) +
+            '}';
+    }
 }

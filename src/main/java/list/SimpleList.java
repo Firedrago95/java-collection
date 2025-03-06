@@ -50,4 +50,15 @@ public interface SimpleList<T> {
         }
         return total;
     }
+
+    static <T extends Number> SimpleList<T> filterNegative(SimpleList<T> values) {
+        SimpleList<T> filteredList = new SimpleArrayList<>();
+        for (int i = 0; i < values.size(); i++) {
+            T value = values.get(i);
+            if (value.doubleValue() >= 0) {  // 음수인 경우를 제외
+                filteredList.add(value);
+            }
+        }
+        return filteredList;
+    }
 }
