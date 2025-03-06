@@ -1,18 +1,26 @@
 package list;
 
-public interface SimpleList {
+public interface SimpleList<T> {
 
-    boolean add(String value);
+    boolean add(Object value);
 
     void add(int index, String value);
 
-    String set(int index, String value);
+    T set(int index, String value);
 
-    String get(int index);
+    void add(int index, Object value);
+
+    T set(int index, Object value);
+
+    T get(int index);
 
     boolean contains(String value);
 
+    boolean contains(Object value);
+
     int indexOf(String value);
+
+    int indexOf(Object value);
 
     int size();
 
@@ -20,7 +28,9 @@ public interface SimpleList {
 
     boolean remove(String value);
 
-    String remove(int index);
+    boolean remove(Object value);
+
+    T remove(int index);
 
     void clear();
 }
