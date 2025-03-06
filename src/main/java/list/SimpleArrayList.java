@@ -13,6 +13,13 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         this.lastIndex = 0;
     }
 
+    public SimpleArrayList(T... values) {
+        this();
+        for (T value : values) {
+            add(value);
+        }
+    }
+
     @Override
     public boolean add(Object value) {
         if (lastIndex == values.length) {
