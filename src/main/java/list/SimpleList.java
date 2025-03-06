@@ -33,4 +33,12 @@ public interface SimpleList<T> {
     T remove(int index);
 
     void clear();
+
+    static <T> SimpleList<T> fromArrayToList(T[] arrays) {
+        SimpleList<T> simpleList = new SimpleArrayList<>();
+        for (T value : arrays) {
+            simpleList.add(value);
+        }
+        return simpleList;
+    }
 }
